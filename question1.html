@@ -1,0 +1,78 @@
+<!--
+1.	Create a web page as shown below.
+
+ 
+
+a.	Validate the textbox show that only a number can be given.
+b.	Enter a number to find whether given number is odd or even.
+c.	If the number is even or odd, or zero, or a negative or a string, you have to validate all the possibilities.
+d.	Add some interesting css to the page.
+e.	Add fieldset and legend tags.
+f.	Display all the possibilities just under Find button.
+
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Check ODD_EVEN</title>
+		<style>
+			fieldset{
+				display : block;
+				background-color:silver;
+				}
+			legend{
+				background-color: red;
+				color: white;
+				padding : 5px 10px;
+				}	
+		</style>
+		<script>
+	
+					
+			function find() {
+
+				var n = Number(document.getElementById("number").value);
+				
+				if(isNaN(n)){ 
+					document.getElementById("result")
+					.innerHTML = "<b style='color:red'>You must enter a number!</b>";
+				}
+				else if(n==0) {
+					document.getElementById("result")
+					.innerHTML = "<b style='color:green'>Given number is Zero,please enter other then zero.</b>";
+				}
+				else if(n<=0) {
+					document.getElementById("result")
+					.innerHTML = "<b style='color:red'>You must enter a number greater than 0!</b>";
+				}
+				else if(n%2==0){
+					document.getElementById("result")
+					.innerHTML = "<b style='color:green'>Given number is an even.</b>";
+				}
+				else	
+					document.getElementById("result")
+					.innerHTML = "<b style='color:green'>Given number is an odd.</b>";
+			
+			}
+		</script>
+	</head>
+	
+	<body>
+		<fieldset>
+			
+			<legend>Check ODD_EVEN Number</legend>
+			<br/>
+			
+			<br/>
+			Number: <input type="text" id="number" />
+			<br/>
+			<br/>
+			<button onclick="find();"><b>Find</b></button>
+			<br/>
+			<br/>
+			<div id="result" />
+			
+		</fieldset>
+	</body>
+</html>

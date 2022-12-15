@@ -1,0 +1,70 @@
+<!--
+2.	Create a web page as shown below. 
+
+ 
+a.	User can give a number or an alphabet as input.
+b.	If user is given a character other than a,e,I,o,u(A,E,I,O,U) as input you have to display “A consonant” or 
+c.	If user is given a character a,e,I,o,u(A,E,I,O,U)   as input you have to display “ A Vowel”.
+d.	Validate and display messages accordingly.
+e.	Use css to display output in better way.
+
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Check VOWEL_CONSONANT</title>
+			<style>
+			fieldset{
+				display : block;
+				background-color:silver;
+				}
+			legend{
+				background-color: red;
+				color: white;
+				padding : 5px 10px;
+				}	
+			</style>
+		<script>
+		
+				function checkVowel()
+				{
+				  ch = document.getElementById("char").value;
+				  if(ch)
+				  {
+					temp = document.getElementById("resPara");
+					temp.style.display = "block";
+					if((ch>='a' && ch<='z') || (ch>='A' && ch<='Z'))
+					{
+					  if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+						document.getElementById("res").innerHTML = "a Vowel";
+					  else if(ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U')
+						document.getElementById("res").innerHTML = ch+ " is a Vowel";
+					  else
+						document.getElementById("res").innerHTML = ch+ " is a Consonant";
+					}
+					else
+					  document.getElementById("res").innerHTML = ch+ " is neither Vowel nor Consonant";
+				  }
+				}
+		</script>
+	</head>
+	
+	<body>
+		<fieldset>
+			
+			<legend>Check VOWEL_CONSONANT</legend>
+			<br/>
+	
+			Character: <input id="char">
+			<br/>
+			<br/>
+			<button onclick="checkVowel()">
+			Check</button>
+			<p id="resPara" style="display:none;">
+			<span id="res"></span></p>
+			<br/>
+			
+		</fieldset>
+	</body>
+</html>
